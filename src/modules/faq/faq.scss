@@ -1,0 +1,135 @@
+.faq {
+  $this: &;
+
+  &__title {
+    @include h2();
+    max-width: 630px;
+    margin-bottom: 64px;
+    @include mobile(){
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__items {
+    position: relative;
+    border-top: 1px solid $dark-gray;
+    @include anim(.15s);
+    @include mobile(){
+      border-color: $gray;
+    }
+  }
+
+  &__item {
+    &--active {
+      #{$this}__head {
+        background: $bg;
+      }
+
+      #{$this}__arrow {
+        width: 30px;
+        @include mobile(){
+          width: 15px;
+          transform: rotate(90deg);
+        }
+      }
+
+      #{$this}__body {
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__head {
+    width: 590px;
+    height: 78px;
+    border: 1px solid $dark-gray;
+    border-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+    @include text3();
+    @include anim();
+    position: relative;
+    @include mobile(){
+      width: 100%;
+      font-size: 14px;
+      height: auto;
+      padding: 10px 30px 10px 10px;
+      border: 0;
+      border-bottom: 1px solid $gray;
+    }
+
+    &:hover {
+      background: $bg;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: -60px;
+    width: 15px;
+    height: 1px;
+    background: $black;
+    @include anim(.2s);
+    @include mobile(){
+      margin-left: -20px
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 1px;
+      background: $black;
+      right: 0;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+      top: 2px;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      bottom: 2px;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 589px;
+    border: 1px solid $dark-gray;
+    border-top: 0;
+    min-height: 100%;
+    @include text2();
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include anim();
+    @include mobile(){
+      position: static;
+      left: 0;
+      border: none;
+      max-height: 0;
+      overflow: hidden;
+      font-size: 16px;
+      @include anim(.3s);
+    }
+  }
+
+  &__inner {
+    padding: 30px 25px;
+    @include mobile(){
+      border-bottom: 1px solid $gray;
+    }
+  }
+}

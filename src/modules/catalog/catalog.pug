@@ -1,0 +1,28 @@
+.catalog.block
+  .c
+    .head КАТЕГОРИИ
+    .catalog__title ПОДБОРКИ ДВЕРЕЙ#[br] НА ЛЮБОЙ ВКУС
+    .catalog__tabs
+      .catalog__headers
+        button.catalog__header.catalog__header--active ВХОДНЫЕ ДВЕРИ В ДОМ
+        button.catalog__header ВХОДНЫЕ ДВЕРИ В КВАРТИРУ
+        button.catalog__header МЕЖКОМНАТНЫЕ ДВЕРИ
+
+      .catalog__bodies
+        each i in [1,2,3]
+          .catalog__body(class=(i === 1 ? 'catalog__body--active' : ''))
+            .catalog__items
+              each j in [1,2,3,4,5,6,7,8]
+                .catalog__item
+                  .catalog__card
+                    .catalog__tags
+                      .catalog__tag.catalog__tag--recommend Рекомендуем
+                      .catalog__tag.catalog__tag--hit Хит
+                      .catalog__tag.catalog__tag--new Новинка
+                    .catalog__img
+                      img(src=require('src/modules/catalog/img/door.jpg'))
+                    .catalog__name= j===4 ? 'ГРАФИЧЕСКИЙ ОРНАМЕНТ ИЗ НЕРЖАВЕЙКИ 7 КВАДРАТОВ/ФЛ-294' : 'СТАЛЬНАЯ ДВЕРЬ «ЭТАЛОН»'
+                    .catalog__price 50 900 ₽
+
+    .catalog__button
+      button.link ПЕРЕЙТИ В КАТАЛОГ

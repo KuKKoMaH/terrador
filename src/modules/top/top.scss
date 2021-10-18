@@ -1,0 +1,260 @@
+.top {
+  $this: &;
+
+  margin-bottom: 40px;
+
+  &__container {
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $light-gray;
+    @include mobile() {
+      flex-direction: column;
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    position: relative;
+    @include mobile() {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--left {
+      margin-right: 54px;
+      @include mobile() {
+        margin-right: 0;
+      }
+
+      #{$this}__card {
+      }
+
+      #{$this}__button {
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+
+      #{$this}__button--open {
+        right: -54px;
+        top: 0;
+        transform-origin: 100% 0;
+        transform: rotate(-90deg) translateY(-100%);
+      }
+
+      #{$this}__button--close {
+        left: 0;
+        bottom: 0;
+        transform-origin: 0 100%;
+        transform: rotate(-90deg);
+      }
+
+      #{$this}__more {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      }
+
+      &#{$this}__item--active {
+        #{$this}__button--open {
+          transform: rotate(-90deg) translateY(-50%);
+        }
+
+        #{$this}__button--close {
+          transform: rotate(-90deg) translateY(50%);
+        }
+      }
+
+    }
+
+    &--right {
+      margin-left: 54px;
+      @include mobile() {
+        margin-left: 0;
+      }
+
+      #{$this}__card {
+      }
+
+      #{$this}__button {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+
+      #{$this}__button--open {
+        left: -54px;
+        bottom: 0;
+        transform: rotate(-90deg) translateY(100%);
+        transform-origin: 0 100%;
+      }
+
+      #{$this}__button--close {
+        right: 0;
+        top: 0;
+        transform: rotate(-90deg) translateY(50%);
+        transform-origin: 100% 0;
+      }
+
+      #{$this}__more {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      }
+
+      &#{$this}__item--active {
+        #{$this}__button--open {
+          transform: rotate(-90deg) translateY(50%);
+        }
+
+        #{$this}__button--close {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &--active {
+      #{$this}__more {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      #{$this}__button {
+        &--open {
+          transition: all .3s ease-out;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        &--close {
+          transition: all .3s ease-out .8s;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+        }
+      }
+    }
+  }
+
+  &__card {
+    height: 590px;
+    display: flex;
+    color: $white;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px;
+    background-size: cover;
+    background-position: 50% 50%;
+    @include mobile() {
+      height: 320px;
+      padding: 10px;
+    }
+  }
+
+  &__suptitle {
+    @include text3();
+    margin-bottom: 7px;
+    @include mobile() {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__title {
+    @include h3();
+    margin-bottom: 25px;
+    @include mobile() {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    @include text3();
+    margin-bottom: 22px;
+    @include mobile() {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    display: flex;
+    font-size: 14px;
+    transition: all .3s ease-in .8s;
+    @include mobile() {
+      display: none;
+    }
+
+    svg {
+      width: 9px;
+      height: 18px;
+    }
+
+    &--close {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all .3s ease-in;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    padding: 1px;
+    background: $body;
+    transition: all .5s ease-in .15s;
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  &__moreHead {
+    @include h3();
+    margin-bottom: 40px;
+  }
+
+  &__moreItems {
+    display: flex;
+  }
+
+  &__moreItem {
+    flex: 1;
+  }
+
+  &__moreImg {
+    margin-bottom: 40px;
+    display: block;
+    box-shadow: 0px 4px 30px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &__moreSuptitle {
+    @include text3();
+    margin-bottom: 7px;
+  }
+
+  &__moreTitle {
+    @include h4();
+    margin-bottom: 20px;
+  }
+
+  &__morePrice {
+    @include text3();
+    margin-bottom: 35px;
+  }
+
+  &__moreText {
+    @include text1();
+  }
+}

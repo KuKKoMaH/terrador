@@ -1,0 +1,31 @@
+.footer
+  .c
+    .footer__top
+      .footer__logo
+        img(src=require('src/img/logo.png'))
+      .footer__menu
+        ul
+          li
+            ul
+              li: a(href='#') КОМПАНИЯ
+              li: a(href='#') НАШИ РАБОТЫ
+              li: a(href='#') КОНТАКТЫ
+          li
+            ul
+              li: a(href='#') АКЦИИ
+              li: a(href='#') КАТАЛОГ ТОВАРОВ
+          li
+            ul
+              li: a(href='#') УСЛУГИ
+              li: a(href='#') ПОМОЩЬ
+      .footer__contacts
+        a.link(href='tel:79374455452') +7(937) 445-54-52
+        .footer__address Г. ПЕНЗА, УЛ. СУВОРОВА, ДОМ 3Б
+        .footer__socials.socials
+          a(href='#'): +the_svg(require('src/img/ok.sprite.svg'))
+          a(href='#'): +the_svg(require('src/img/inst.sprite.svg'))
+          a(href='#'): +the_svg(require('src/img/vk.sprite.svg'))
+
+    .footer__payments
+      img(src=require('src/img/payments.png'))
+    .footer__copyright © 2021 Terrador, Все права защищены

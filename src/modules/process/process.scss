@@ -1,0 +1,57 @@
+.process {
+  $this: &;
+
+  &__text {
+    @include text1();
+    margin-bottom: 60px;
+    @include mobile(){
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__cols {
+    display: flex;
+    @include mobile(){
+      flex-direction: column;
+    }
+  }
+
+  &__aside {
+    max-width: 570px;
+    margin-right: 40px;
+    @include mobile(){
+      margin: 0 0 30px;
+    }
+  }
+
+  &__main {
+    flex: 1;
+  }
+
+  &__title {
+    @include h2();
+    margin-bottom: 70px;
+    @include mobile(){
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__points {
+    border-top: 1px solid $light-gray;
+  }
+
+  &__point {
+    height: 65px;
+    border-bottom: 1px solid $light-gray;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    @include mobile(){
+      font-size: 16px;
+      height: auto;
+      padding: 10px 0;
+    }
+  }
+}

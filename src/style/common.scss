@@ -1,0 +1,188 @@
+html {
+  font-family: 'Inter', sans-serif;
+  color: $black;
+  font-size: 16px;
+  line-height: 1.4;
+  background: $body;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  scroll-behavior: smooth;
+  @include media('md') {
+    font-size: 14px;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1cm;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+.c {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-lg;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  //@include media('lg') {
+  //  max-width: $container-md;
+  //}
+  @include media('md') {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+img[data-src],
+img[data-srcset] {
+  min-height: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.small {
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.animated {
+  & > * {
+    visibility: hidden;
+  }
+}
+
+.nowrap {
+  display: inline;
+  white-space: nowrap;
+}
+
+.fullWidth {
+  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+
+  //margin-left: calc(-100vw / 2 + 500px / 2);
+  //margin-right: calc(-100vw / 2 + 500px / 2);
+}
+
+.content {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    display: block;
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.link {
+  @include text3();
+  color: $black;
+  border-bottom: 1px solid $dark-gray;
+  padding-bottom: 10px;
+  text-decoration: none;
+  @include anim();
+
+  &:hover {
+    text-decoration: none;
+    border-color: $black;
+  }
+}
+
+.head {
+  position: relative;
+  @include h4();
+  color: $light-gray;
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  @include mobile() {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+
+  &:after {
+    content: '';
+    //position: absolute;
+    flex: 1;
+    height: 1px;
+    margin-left: 30px;
+    background: $light-gray;
+  }
+}
+
+.block {
+  margin: 130px 0;
+  @include mobile() {
+    margin: 80px 0;
+  }
+}
+
+.video16-9 {
+  position: relative;
+  padding-bottom: 56.25%;
+  background: $bg;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: 20px;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}

@@ -1,0 +1,23 @@
+.advantages.block
+  .c
+    .head ПРЕИМУЩЕСТВА
+    .advantages__title ПРЕДСТАВЛЯЮ НАШУ РАЗРАБОТКУ, В КОТОРОЙ ЗАЛОЖЕНЫ МОИ ЗНАНИЯ И 20-ТИ ЛЕТНИЙ ОПЫТ
+    .advantages__cols
+      .advantages__col.advantages__col--left
+        .advantages__sup Думаю, это совершенная дверь! Я записал небольшие видео, чтобы рассказать о ее преимуществах:
+        img(src=require('src/modules/advantages/img/img.jpg'))
+
+      .advantages__col
+        -var tabs = ['КОНТУР УПЛОТНЕНИЯ', 'ТЕРМОРАЗРЫВ', 'ФУРНИТУРА', 'РАМА', 'СОСТАВ САМОЙ ДВЕРИ', 'ЭКСЦЕНТРИКА', 'ДИЗАЙН']
+        .advantages__tabs
+          each tab, i in tabs
+            .advantages__tab(class=(i === 1 ? 'advantages__tab--active' : ''))
+              .advantages__head
+                =tab
+                +the_svg(require('src/img/arrow.sprite.svg'))
+              .advantages__body
+                .advantages__content
+                  .advantages__text
+                    .video16-9
+                  .advantages__text
+                    p Чем больше контуров уплотнения, тем выше шумоизоляция и ниже допустимая температура эксплуатации двери

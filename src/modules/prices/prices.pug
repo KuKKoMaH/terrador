@@ -1,0 +1,32 @@
+.prices.block
+  .c
+    .head СТОИМОСТЬ
+    .prices__cols
+      .prices__left
+        .prices__title СКОЛЬКО СТОИТ ПРЕМИУМ-ДВЕРЬ TERRADOR?
+        .prices__subtitle Дизайн - на ваш выбор,#[br] конструктив всегда премиальный!
+        .prices__button
+          button.link КАТАЛОГ ДВЕРЕЙ TERRADOR
+
+      .prices__right
+        .prices__slider
+          .prices__slides
+            each i in [1,2,3]
+              .prices__slide
+                .prices__aside
+                  img.prices__logo(src=require('src/img/logo.png'))
+                  img.prices__img(src=require('src/modules/prices/img/door.jpg'))
+                .prices__main
+                  .prices__name ПД-2
+                  .prices__param Массив дуба премиум (Серия ПД)
+                  .prices__param Доставка + установка
+                  .prices__note Возможно изменение цвета и дизайна отделки двери по вашему желанию, доступно около 3500 вариантов
+                  .prices__price Цена от 25 800 ₽
+                  .prices__call
+                    .btn
+                      +the_svg(require('src/img/phone.sprite.svg'))
+                      | ПОЗВОНИТЬ В МАГАЗИН
+
+        .prices__nav
+          .prices__arrow.prices__arrow--prev: +the_svg(require('src/img/longArrow.sprite.svg'))
+          .prices__arrow.prices__arrow--next: +the_svg(require('src/img/longArrow.sprite.svg'))

@@ -1,0 +1,133 @@
+.testimonials {
+  $this: &;
+
+  &__title {
+    max-width: 750px;
+    @include h2();
+    margin-bottom: 30px;
+    @include mobile(){
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 360px;
+    @include text2();
+    color: $light-gray;
+    margin-bottom: 60px;
+    @include mobile(){
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    @include text2();
+    margin-bottom: 60px;
+    @include mobile(){
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 60px;
+    @include mobile(){
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slides {
+    display: flex;
+  }
+
+  &__slide {
+    width: 330px;
+    margin-right: 30px;
+    cursor: pointer;
+    flex-shrink: 0;
+    @include mobile(){
+      width: 210px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      #{$this}__img {
+        img {
+          filter: blur(4px);
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      @include anim(.25s);
+      @include mobile(){
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &:after {
+      content: 'Смотреть';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid $white;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include anim(.25s);
+      opacity: 0;
+    }
+  }
+
+  &__name {
+    @include h5();
+    margin-bottom: 5px;
+    @include mobile(){
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__description {
+    @include text4();
+    color: $dark-gray;
+    @include mobile(){
+      font-size: 12px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    @include mobile(){
+      flex-direction: column;
+    }
+
+    > * {
+      margin-right: 60px;
+      @include mobile(){
+        margin: 0 0 20px;
+      }
+    }
+  }
+}

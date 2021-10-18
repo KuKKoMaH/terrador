@@ -1,0 +1,43 @@
+.header
+  .c
+    .header__container
+      button.header__menuOpen: +the_svg(require('src/img/menu.sprite.svg'))
+      .header__logo
+        img(src=require('src/img/logo.png'))
+      .header__content
+        .header__top
+          .header__menu.header__menu--top
+            ul
+              li: a(href='#') КОМПАНИЯ
+              li: a(href='#') НАШИ РАБОТЫ
+              li: a(href='#') КОНТАКТЫ
+              li: a(href='tel:79374455452') +7 (937) 445-54-52
+          .header__action
+            button.btn ВЫЗВАТЬ ЗАМЕРЩИКА
+        .header__bottom
+          .header__menu.header__menu--bottom
+            ul
+              li: a(href='#') АКЦИИ
+              li: a(href='#') КАТАЛОГ ТОВАРОВ
+              li: a(href='#') УСЛУГИ
+              li: a(href='#') ПОМОЩЬ
+
+      .header__popup
+        button.header__menuClose: +the_svg(require('src/img/close.sprite.svg'))
+        .header__popupLogo: img(src=require('src/img/logo.png'))
+        .header__popupMenu
+          ul
+            li: a(href='#') АКЦИИ
+            li: a(href='#') КАТАЛОГ ТОВАРОВ
+            li: a(href='#') УСЛУГИ
+            li: a(href='#') КОМПАНИЯ
+            li: a(href='#') НАШИ РАБОТЫ
+            li: a(href='#') ПОМОЩЬ
+            li: a(href='#') КОНТАКТЫ
+        a.link(href='tel:79374455452') +7(937) 445-54-52
+        .header__address Г. ПЕНЗА, УЛ. СУВОРОВА, ДОМ 3Б
+        .header__socials.socials
+          a(href='#'): +the_svg(require('src/img/ok.sprite.svg'))
+          a(href='#'): +the_svg(require('src/img/inst.sprite.svg'))
+          a(href='#'): +the_svg(require('src/img/vk.sprite.svg'))
+

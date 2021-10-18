@@ -1,0 +1,120 @@
+.footer {
+  $this: &;
+
+  background: $bg;
+
+  &__top {
+    display: flex;
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    @include mobile() {
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    @include mobile() {
+      margin-bottom: 20px;
+    }
+
+    img {
+      @include mobile() {
+        max-width: 100px;
+        height: auto;
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    @include mobile() {
+      flex-direction: column;
+      border-bottom: 1px solid $gray;
+      margin-bottom: 20px;
+    }
+
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    > ul {
+      display: flex;
+      @include mobile() {
+        flex-direction: column;
+      }
+
+      > li {
+        margin: 0 40px;
+        @include mobile() {
+          margin: 0;
+        }
+
+        > ul > li {
+          margin-bottom: 15px;
+          @include mobile() {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    a {
+      @include text3();
+    }
+  }
+
+  &__contacts {
+    margin-left: auto;
+    width: 340px;
+  }
+
+  &__address {
+    margin-top: 30px;
+    @include text3();
+  }
+
+  &__socials {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @include mobile(){
+      position: static;
+      margin-top: 20px;
+    }
+  }
+
+  &__payments {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 47px;
+    border-top: 1px solid $dark-gray;
+    @include mobile(){
+      height: auto;
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $light-gray;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 12px;
+    @include mobile(){
+      border-top: 0;
+      text-align: left;
+      justify-content: flex-start;
+      height: auto;
+      padding: 20px 0;
+    }
+  }
+}

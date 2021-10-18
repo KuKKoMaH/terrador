@@ -1,0 +1,120 @@
+.advantages {
+  $this: &;
+
+  &__title {
+    @include h2();
+    margin-bottom: 85px;
+    @include mobile(){
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__cols {
+    display: flex;
+    margin: 0 -30px;
+    @include mobile(){
+      margin: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    flex: 1;
+    margin: 0 30px;
+    @include mobile(){
+      margin: 0;
+    }
+
+    &--left {
+      @include mobile(){
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        @include mobile(){
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__sup {
+    @include text2();
+    color: $dark-gray;
+    margin-bottom: 55px;
+    max-width: 330px;
+    @include mobile(){
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  &__tabs {
+    border-bottom: 1px solid $dark-gray;
+  }
+
+  &__tab {
+    &--active {
+      #{$this}__head {
+        svg {
+          transform: none;
+        }
+      }
+
+      #{$this}__body {
+        max-height: none;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    border-top: 1px solid $dark-gray;
+    cursor: pointer;
+    @include h4();
+    @include mobile(){
+      font-size: 18px;
+      height: 45px;
+    }
+
+    svg {
+      margin-left: auto;
+      transform: rotate(-90deg);
+      @include anim();
+      width: 10px;
+      height: 15px;
+      margin-right: 30px;
+      @include mobile(){
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    @include anim(.3s);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    @include text2();
+    margin-bottom: 30px;
+    @include mobile(){
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.order {
+  $this: &;
+
+  &__title {
+    @include h2();
+    max-width: 790px;
+    margin-bottom: 60px;
+    @include mobile(){
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__cols {
+    display: flex;
+  }
+
+  &__main {
+    flex: 1;
+  }
+
+  &__aside {
+    width: 590px;
+    margin-left: 120px;
+    @include mobile(){
+      display: none;
+    }
+  }
+
+  &__text {
+    @include text1();
+    margin-bottom: 75px;
+    @include mobile(){
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    max-width: 365px;
+  }
+
+  &__input {
+    margin-bottom: 60px;
+    @include mobile(){
+      margin-bottom: 40px;
+    }
+  }
+
+  &__confirm {
+    margin-bottom: 60px;
+    @include mobile(){
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include mobile(){
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

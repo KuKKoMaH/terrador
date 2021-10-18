@@ -1,0 +1,24 @@
+.testimonials.block
+  .c
+    .head ОТЗЫВЫ ПОКУПАТЕЛЕЙ
+    .testimonials__title ХОТИТЕ, ЧТОБЫ ДВЕРЬ БЫЛА «НЕ КАК У ВСЕХ»?
+    .testimonials__subtitle Если вам говорят, что такую дверь сделать невозможно, приходите к нам — и мы ее просто сделаем!
+    .testimonials__text Вот несколько подобных историй из нашей богатой практики
+    .testimonials__slider
+      .testimonials__slides
+        each i in [1,2,3,4,5,6,7]
+          .testimonials__slide
+            .testimonials__img
+              img(src=require('src/modules/testimonials/img/01.jpg'))
+            .testimonials__name ТАТЬЯНА
+            .testimonials__description ДВЕРЬ «REVOLUTION WHITE»
+
+    .testimonials__buttons
+      .btn.btn--black
+        +the_svg(require('src/img/mail.sprite.svg'))
+        | ОТПРАВИТЬ ЭСКИЗ
+
+      .btn
+        +the_svg(require('src/img/phone.sprite.svg'))
+        | ПОЗВОНИТЬ В МАГАЗИН
+

@@ -1,0 +1,70 @@
+.discount {
+  $this: &;
+
+  @include mobile(){
+    margin-top: 40px;
+  }
+
+
+  &__items {
+    display: flex;
+    margin: 0 -10px;
+    @include mobile() {
+      margin: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    margin: 0 10px;
+    @include mobile() {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__card {
+    border: 1px solid $light-gray;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include mobile(){
+      border-color: $bg;
+    }
+  }
+
+  &__text {
+    padding: 20px;
+    @include text1();
+    flex: 1;
+    @include mobile(){
+      font-size: 18px;
+      font-weight: normal;
+      padding: 10px;
+    }
+  }
+
+  &__sub {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: $bg;
+    padding: 0 20px;
+    @include text2();
+    @include mobile(){
+      font-size: 14px;
+      padding: 10px 20px;
+      height: auto;
+      text-align: right;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    margin-top: 90px;
+    @include mobile(){
+      margin-top: 40px;
+    }
+  }
+}

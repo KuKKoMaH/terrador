@@ -1,0 +1,28 @@
+.quiz {
+  $this: &;
+
+  &__title {
+    max-width: 800px;
+    @include h2();
+    margin-bottom: 30px;
+    @include mobile(){
+      font-size: 31px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 540px;
+    @include text1();
+    margin-bottom: 60px;
+    @include mobile(){
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__placeholder {
+    height: 620px;
+    background: $dark-gray;
+  }
+}

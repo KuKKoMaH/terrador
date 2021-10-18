@@ -1,0 +1,199 @@
+.prices {
+  $this: &;
+
+  &__cols {
+    display: flex;
+    @include mobile() {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    margin-right: 30px;
+    flex: 1;
+    @include mobile() {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    @include h2();
+    margin-bottom: 65px;
+    @include mobile() {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    @include text2();
+    color: $light-gray;
+    margin-bottom: 60px;
+    @include mobile() {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include mobile() {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__right {
+    width: 720px;
+    @include mobile() {
+      width: auto;
+      margin: 0 -10px;
+      position: relative;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+
+  &__slides {
+    display: flex;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    @include mobile() {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+    }
+  }
+
+  &__aside {
+    background: $bg;
+    width: 360px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 80px;
+    margin-right: 60px;
+    @include mobile() {
+      width: auto;
+      padding: 30px;
+      margin: 0 0 10px;
+    }
+  }
+
+  &__logo {
+    max-height: 50px;
+    width: auto;
+    margin-bottom: 30px;
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  &__img {
+    box-shadow: 0px 0px 30px 0 rgba(0, 0, 0, 0.15);
+    @include mobile() {
+      max-height: 240px;
+      width: auto;
+    }
+  }
+
+  &__name {
+    @include h3();
+    margin-bottom: 35px;
+    @include mobile() {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__param {
+    @include text2();
+    margin-bottom: 10px;
+    @include mobile() {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__note {
+    @include text5();
+    color: $dark-gray;
+    margin: 30px 0 60px;
+    @include mobile() {
+      font-size: 12px;
+      margin: 20px 0;
+    }
+  }
+
+  &__price {
+    @include text1();
+    margin: 60px 0;
+    @include mobile() {
+      font-size: 18px;
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+  }
+
+  &__call {
+    margin-top: 60px;
+    @include mobile() {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 360px;
+    @include mobile() {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    @include mobile() {
+      position: absolute;
+      top: 140px;
+    }
+
+    svg {
+      width: 40px;
+      height: 10px;
+      display: block;
+    }
+
+    &--prev {
+      transform: rotate(-180deg);
+      @include mobile() {
+        left: 0;
+      }
+    }
+
+    &--next {
+      @include mobile() {
+        right: 0;
+      }
+    }
+  }
+}
