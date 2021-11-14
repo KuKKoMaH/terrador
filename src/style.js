@@ -10,8 +10,9 @@ import "./style/fonts.scss";
 import "./style/common.scss";
 import "./style/typography.scss";
 
-import './modules/photoswipe/photoswipe.scss';
-import './modules/photoswipe/default-skin.scss';
+// import './modules/photoswipe/photoswipe.scss';
+// import './modules/photoswipe/default-skin.scss';
+
 import './modules/popup/popup.scss';
 import './modules/header/header.scss';
 import './modules/top/top.scss';
@@ -26,3 +27,4 @@ import './modules/order/order.scss';
 import './modules/process/process.scss';
 import './modules/faq/faq.scss';
 import './modules/footer/footer.scss';
+import './modules/form/form.scss';

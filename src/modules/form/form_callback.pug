@@ -1,10 +1,14 @@
 .form
-  .form__head
-    .form__title Заказать обратный звонок
-    .form__order
-    .form__text Оставьте номер телефона — мы перезвоним вам в течение 5 минут
-  .form__row
-    .input: input(placeholder='Телефон')
-
-  button.btn.btn--block ОТПРАВИТЬ ЗАЯВКУ
+  .form__title ВЫЗВАТЬ ЗАМЕРЩИКА
+  .form__content
+    .form__input
+      .input: input(placeholder="Ваше имя")
+    .form__input
+      .input: input(placeholder="Телефон" type='tel')
+    .form__confirm
+      label.checkbox
+        input(type='checkbox')
+        span Я согласен с обработкой #[a(href='#') персональных данных]
+    .form__button
+      button.btn.btn--black ОТПРАВИТЬ
 

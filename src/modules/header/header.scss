@@ -93,7 +93,7 @@
       margin: 0;
     }
 
-    a {
+    a, button {
       display: flex;
       align-items: center;
       height: 60px;
@@ -115,7 +115,7 @@
         }
       }
 
-      a {
+      a, button {
         @include text4();
         color: $dark-gray;
 
@@ -134,7 +134,7 @@
         }
       }
 
-      a {
+      a, button {
         @include text3();
 
         &:hover {
