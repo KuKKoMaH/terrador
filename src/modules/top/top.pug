@@ -3,34 +3,11 @@
     .top__container
       .top__item.top__item--left
         .top__card(style='background-image:url(' + require('src/modules/top/img/01.jpg') + ')')
-          .top__suptitle В КВАРТИРУ
-          .top__title ВХОДНЫЕ ДВЕРИ
-          .top__price ОТ 17 ТЫС. ₽
-          a.btn.btn--white(href='#') КАТАЛОГ
-
-        .top__more
-          .top__moreHead БОЛЕЕ 50 МОДЕЛЕЙ В НАЛИЧИИ
-          .top__moreItems
-            .top__moreItem
-              img.top__moreImg(src=require('src/modules/top/img/item_03.jpg'))
-              .top__moreText СЕРИЯ СО СТЕКЛОМ
-            .top__moreItem
-              img.top__moreImg(src=require('src/modules/top/img/item_04.jpg'))
-              .top__moreText СЕРИЯ ХХ
-
-        button.top__button.top__button--open
-          |Показать
-          +the_svg(require('src/img/chevron.sprite.svg'))
-        button.top__button.top__button--close
-          |Скрыть
-          +the_svg(require('src/img/chevron.sprite.svg'))
-
-      .top__item.top__item--right
-        .top__card(style='background-image:url(' + require('src/modules/top/img/02.jpg') + ')')
-          .top__suptitle ПОД КЛЮЧ
-          .top__title МЕЖКОМНАТНЫЕ ДВЕРИ
-          .top__price ОТ 8 ТЫС. ₽
-          a.btn.btn--white(href='#') ПРИМЕР РАСЧЕТА
+          .top__info
+            .top__suptitle В КВАРТИРУ
+            .top__title ВХОДНЫЕ ДВЕРИ
+            .top__price ОТ 17 ТЫС. ₽
+            a.btn.btn--white(href='#') КАТАЛОГ
 
         .top__more
           .top__moreHead ДОСТАВКА И УСТАНОВКА БЕСПЛАТНО
@@ -47,6 +24,31 @@
               .top__moreTitle ПРЕМИУМ-ДВЕРЬ
               .top__morePrice от 46 тыс. ₽
               .btn ПОДРОБНЕЕ
+
+        button.top__button.top__button--open
+          |Показать
+          +the_svg(require('src/img/chevron.sprite.svg'))
+        button.top__button.top__button--close
+          |Скрыть
+          +the_svg(require('src/img/chevron.sprite.svg'))
+
+      .top__item.top__item--right
+        .top__card(style='background-image:url(' + require('src/modules/top/img/02.jpg') + ')')
+          .top__info
+            .top__suptitle ПОД КЛЮЧ
+            .top__title МЕЖКОМНАТНЫЕ ДВЕРИ
+            .top__price ОТ 8 ТЫС. ₽
+            a.btn.btn--white(href='#') ПРИМЕР РАСЧЕТА
+
+        .top__more
+          .top__moreHead БОЛЕЕ 50 МОДЕЛЕЙ В НАЛИЧИИ
+          .top__moreItems
+            .top__moreItem
+              img.top__moreImg(src=require('src/modules/top/img/item_03.jpg'))
+              .top__moreText СЕРИЯ СО СТЕКЛОМ
+            .top__moreItem
+              img.top__moreImg(src=require('src/modules/top/img/item_04.jpg'))
+              .top__moreText СЕРИЯ ХХ
 
         button.top__button.top__button--open
           |Показать

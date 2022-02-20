@@ -4,6 +4,9 @@ const bodyClassName = 'advantages__body';
 const contentClassName = 'advantages__content';
 
 $('.advantages__head').on('click', ( e ) => {
+  $('.advantages iframe').each((i, el) => {
+    el.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+  })
   const $prevActiveItem = $('.' + activeClassName);
   const $prevActiveBody = $prevActiveItem.find('.' + bodyClassName);
   const $prevActiveContent = $prevActiveItem.find('.' + contentClassName);

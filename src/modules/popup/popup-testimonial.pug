@@ -1,0 +1,6 @@
+#testimonial-popup.popup.micromodal-slide(aria-hidden="true")
+  .popup__overlay(tabindex="-1" data-micromodal-close)
+    .popup__container(role="dialog" aria-modal="true")
+      button.popup__close(data-micromodal-close): +the_svg(require('src/img/close.sprite.svg'))
+      include ../testimonials/popup
+

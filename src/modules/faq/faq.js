@@ -15,10 +15,10 @@ $('.faq__head').on('click', ( e ) => {
   const $newActiveBody = $newActiveItem.find('.' + bodyClassName);
   const $newActiveContent = $newActiveItem.find('.' + contentClassName);
 
-  $prevActiveBody.css('maxHeight', $prevActiveContent.height());
+  $prevActiveBody.css('maxHeight', $prevActiveContent.outerHeight());
   $prevActiveItem.removeClass(activeClassName);
 
-  $newActiveBody.css('maxHeight', $newActiveContent.height());
+  $newActiveBody.css('maxHeight', $newActiveContent.outerHeight());
   $newActiveItem.addClass(activeClassName);
 
   $newActiveBody.one('transitionend', ( e ) => {

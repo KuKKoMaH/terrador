@@ -7,7 +7,7 @@
     .testimonials__slider
       .testimonials__slides
         each i in [1,2,3,4,5,6,7]
-          .testimonials__slide
+          .testimonials__slide(data-micromodal-trigger="testimonial-popup")
             .testimonials__img
               img(src=require('src/modules/testimonials/img/01.jpg'))
             .testimonials__name ТАТЬЯНА

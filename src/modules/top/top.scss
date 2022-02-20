@@ -1,9 +1,12 @@
+$item_padding: 54px;
+
 .top {
   $this: &;
 
   margin-bottom: 40px;
 
   &__container {
+    position: relative;
     display: flex;
     align-items: stretch;
     padding-bottom: 60px;
@@ -26,9 +29,9 @@
     }
 
     &--left {
-      margin-right: 54px;
+      padding-right: $item_padding;
       @include mobile() {
-        margin-right: 0;
+        padding-right: 0;
       }
 
       #{$this}__card {
@@ -41,23 +44,38 @@
         svg {
           transform: rotate(-90deg);
         }
+
       }
 
       #{$this}__button--open {
-        right: -54px;
+        right: -10px;
         top: 0;
         transform-origin: 100% 0;
         transform: rotate(-90deg) translateY(-100%);
+
+        &:hover {
+          right: -20px;
+        }
       }
 
       #{$this}__button--close {
-        left: 0;
-        bottom: 0;
-        transform-origin: 0 100%;
-        transform: rotate(-90deg);
+        top: 0;
+        right: calc(-100% - #{$item_padding} - 10px);
+        transform-origin: 0 0;
+        transform: rotate(-90deg) translate(-100%, -150%);
+        flex-direction: column-reverse;
+
+        svg {
+          transform: rotate(90deg);
+        }
       }
 
       #{$this}__more {
+        margin-left: -$item_padding;
+
+        left: 100%;
+        padding-left: $item_padding * 2;
+        padding-right: 120px;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
       }
 
@@ -67,16 +85,16 @@
         }
 
         #{$this}__button--close {
-          transform: rotate(-90deg) translateY(50%);
+          transform: rotate(-90deg) translate(-100%, -100%);
         }
       }
 
     }
 
     &--right {
-      margin-left: 54px;
+      padding-left: $item_padding;
       @include mobile() {
-        margin-left: 0;
+        padding-left: 0;
       }
 
       #{$this}__card {
@@ -92,20 +110,33 @@
       }
 
       #{$this}__button--open {
-        left: -54px;
+        left: -10px;
         bottom: 0;
         transform: rotate(-90deg) translateY(100%);
         transform-origin: 0 100%;
+
+        &:hover {
+          left: -20px;
+        }
       }
 
       #{$this}__button--close {
-        right: 0;
-        top: 0;
-        transform: rotate(-90deg) translateY(50%);
-        transform-origin: 100% 0;
+        bottom: 0;
+        left: calc(-100% - #{$item_padding});
+        transform: rotate(-90deg) translate(100%, 150%);
+        transform-origin: 100% 100%;
+        flex-direction: column;
+
+        svg {
+          transform: rotate(-90deg);
+        }
       }
 
       #{$this}__more {
+        margin-right: -$item_padding;
+        right: 100%;
+        padding-right: $item_padding * 2;
+        padding-left: 120px;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
       }
 
@@ -115,7 +146,7 @@
         }
 
         #{$this}__button--close {
-          transform: rotate(-90deg);
+          transform: rotate(-90deg) translate(100%, 100%);
         }
       }
     }
@@ -144,17 +175,25 @@
   }
 
   &__card {
+    position: relative;
     height: 590px;
-    display: flex;
     color: $white;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 30px;
     background-size: cover;
     background-position: 50% 50%;
     @include mobile() {
       height: 320px;
+      padding: 10px;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(#000, .5);
+    padding: 30px;
+    @include mobile() {
       padding: 10px;
     }
   }
@@ -177,9 +216,10 @@
   }
 
   &__price {
-    @include text3();
+    @include h3();
     margin-bottom: 22px;
     @include mobile() {
+      font-size: 24px;
       margin-bottom: 20px;
     }
   }
@@ -188,7 +228,8 @@
     position: absolute;
     display: flex;
     font-size: 14px;
-    transition: all .3s ease-in .8s;
+    transition: all .3s ease-in, transform .3s ease-in .8s, opacity .3s ease-in .8s;
+    padding: 10px 0;
     @include mobile() {
       display: none;
     }
@@ -203,18 +244,30 @@
       visibility: hidden;
       pointer-events: none;
       transition: all .3s ease-in;
+      z-index: 2;
     }
   }
 
   &__more {
     position: absolute;
-    top: -1px;
-    right: -1px;
-    bottom: -1px;
-    left: -1px;
-    padding: 1px;
+    top: 0;
+    height: 100%;
     background: $body;
     transition: all .5s ease-in .15s;
+    z-index: 1;
+    width: calc(100% + #{$item_padding + 1px});
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: $bg;
+      left: 0;
+      top: 125px;
+      width: 100%;
+      height: 220px;
+      z-index: -1;
+    }
+
     @include mobile() {
       display: none;
     }

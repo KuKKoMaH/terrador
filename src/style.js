@@ -23,6 +23,7 @@ import './modules/quality/quality.scss';
 import './modules/advantages/advantages.scss';
 import './modules/prices/prices.scss';
 import './modules/testimonials/testimonials.scss';
+import './modules/testimonials/testimonialPopup.scss';
 import './modules/order/order.scss';
 import './modules/process/process.scss';
 import './modules/faq/faq.scss';
